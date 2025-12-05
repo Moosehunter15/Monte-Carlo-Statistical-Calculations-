@@ -22,6 +22,7 @@ data.fr = data.frame(x = 1:M, theta = theta_vec)
 index = (1:M)[diff(theta_vec)==0]
 data.fr = data.frame(x = index, theta = theta_vec[index])
 
-ggplot(data.fr, mapping = aes(x = x, y = theta))+geom_line(col = 'blue') + geom_point(aes(x = x, y = theta), data = data.fr, 
+p  = ggplot(data.fr, mapping = aes(x = x, y = theta))+geom_line(col = 'blue') + geom_point(aes(x = x, y = theta), data = data.fr, 
 col = 'black', size = 2, alpha = 0.5) + theme_bw()
+p = ggplot(data.fr, aes(x = theta))+geom_histogram(aes(y = ..density..), fill = 'blue', alpha = 0.75)+theme_bw()
 
